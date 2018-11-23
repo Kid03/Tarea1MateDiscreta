@@ -25,7 +25,11 @@ public class Grua {
 	public ArrayList <Plataforma> getPlataformas (){
 		return plataformas;
 	}
+	public Plataforma getPlataforma (Integer posicion) {
+		return plataformas.get(posicion);
+	}
 	//Metodos Propios
+	
 	public void moverCarga (Integer pInicial,Integer pFinal){
 		plataformas.get(pFinal).pushCarga(plataformas.get(pInicial).peekCarga());
 		plataformas.get(pInicial).popCarga();

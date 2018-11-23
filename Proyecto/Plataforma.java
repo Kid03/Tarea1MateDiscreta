@@ -2,13 +2,13 @@ import java.util.*;
 
 public class Plataforma {
 	private String nombre;
-	private Stack <Contenedor> carga;
+	private ArrayList<Contenedor> carga;
 	//Constructores
 	public Plataforma (String nombre){
 		setNombre(nombre);
-		carga=new Stack <Contenedor> ();
+		carga=new ArrayList <Contenedor> ();
 	}
-	public Plataforma (String nombre, Stack <Contenedor> carga){
+	public Plataforma (String nombre,ArrayList<Contenedor> carga){
 		setNombre(nombre);
 		setCarga(carga);
 	}
@@ -20,17 +20,26 @@ public class Plataforma {
 		this.nombre=nombre;
 	}
 
-	public void setCarga (Stack <Contenedor> carga){
+	public void setCarga (ArrayList <Contenedor> carga){
 		this.carga=carga;
 	}
 	//Metodos propios
+	//PeekCarga retorna el contenedor que está más arriba.
 	public Contenedor peekCarga (){
-		return carga.peek();
+		if (carga.size()==0) return null;
+		return carga.get(carga.size()-1);
 	}
+	//popCarga saca el contenedor de más arriba.
 	public void popCarga (){
-		carga.pop();
+		carga.remove(carga.size()-1);
 	}
+	//Añade un contendor en el tope de la carga.
 	public void pushCarga (Contenedor container){
-		carga.push(container);
+		carga.add(container);
 	}
+	//Retorna el largo de la carga.
+	public int size () {
+		return carga.size();
+	}
+
 }
