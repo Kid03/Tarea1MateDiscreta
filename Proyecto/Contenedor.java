@@ -2,7 +2,7 @@ public class Contenedor {
 
 	private String prosedencia;
 	private Integer masa;
-
+	//Constructores
 	public Contenedor (Integer masa){
 		setMasa(masa);
 	}
@@ -10,7 +10,7 @@ public class Contenedor {
 		setProsedencia (prosedencia);
 		setMasa (masa);
 	}
-
+	//Getters y Setters
 	public String getProsedencia(){
 		return prosedencia;
 	}
