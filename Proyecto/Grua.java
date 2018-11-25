@@ -34,4 +34,10 @@ public class Grua {
 		plataformas.get(pFinal).pushCarga(plataformas.get(pInicial).peekCarga());
 		plataformas.get(pInicial).popCarga();
 	}
+	public boolean cargaMayor (Integer mayor, Integer menor) {
+		if (plataformas.get(mayor).peekCarga().getMasa() >= plataformas.get(menor).peekCarga().getMasa()) {
+			return true;
+		}
+		return false;
+	}
 }
